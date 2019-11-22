@@ -1,3 +1,6 @@
+//Question 7:
+//C program to find out sum of the following series.
+//S=1!+2!+3!+4!+ ... +n!
 #include <stdio.h>
 void main()
 {
