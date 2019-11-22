@@ -1,3 +1,5 @@
+//Question 9:
+// Write a C program which prints all prime numbers between 1 and 100.
 #include <stdio.h>
 void main()
 {
