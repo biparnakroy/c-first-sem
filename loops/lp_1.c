@@ -1,3 +1,7 @@
+#Question1:
+#Write a C program which prints all integers divisible by n between 1 and 100 where value of n is
+#provided by the user.
+
 #include <stdio.h>
 void main()
 {
