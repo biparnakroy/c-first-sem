@@ -1,3 +1,7 @@
+//Question 8:
+//Write a C program to find out sum of the following series.
+//S = 1@ + 2@ + 3@ + 4@ + … + n@
+//where, n@ is the sum of all factors of n. Example: 6@ = 1+2+3+6 = 12
 #include <stdio.h>
 void main()
 {
