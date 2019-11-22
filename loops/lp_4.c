@@ -1,3 +1,5 @@
+//Quetsion 4
+//Write a C program to find out sum of the following series.
 #include <stdio.h>
 void main()
 {
@@ -13,3 +15,5 @@ void main()
 	printf("THE SUM =%d", sum);
 
 }
+// alternatively the problem can be solved by using the fomulae s=n(n+1)/2 
+
