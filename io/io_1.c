@@ -1,3 +1,6 @@
+//Question 1:
+//Write a C program that reads two values from the keyboard, swaps their values and prints out the
+result.
 #include <stdio.h>
 void main()
 {
