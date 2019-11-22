@@ -1,3 +1,6 @@
+//Question 5:
+//Write a C program to find out sum of the following series.
+// S=1.2+2.3+3.4+4.5+ ... +n.(n+1)
 #include <stdio.h>
 void main()
 {
