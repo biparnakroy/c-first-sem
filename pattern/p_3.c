@@ -4,7 +4,7 @@
 //        ***
 //       ****
 #include <stdio.h>
-void mian()
+void main()
 {
   int i,j,k;
   int n=5; // size of the pattern
