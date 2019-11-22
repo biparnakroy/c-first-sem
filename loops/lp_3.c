@@ -1,3 +1,5 @@
+//Question 3:
+//Write a C program to find the reverse of a given number.
 #include <stdio.h>
 void main()
 {
