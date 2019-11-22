@@ -5,4 +5,7 @@
 void main()
 {
   int a,b,c;
+  float avg=0.0;
+  avg=(a+b+c)/3;
+  printf("%d", (int)avg);
   }
