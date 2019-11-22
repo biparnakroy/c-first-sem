@@ -1,3 +1,5 @@
+//Question 10:
+//Write a program which accepts a number n and prints all prime factors of n
 #include <stdio.h>
 void main()
 {
