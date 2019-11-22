@@ -1,3 +1,5 @@
+//Question2:
+//Write a C program to find out sum of digits of a given number.
 #include <stdio.h>
 void main()
 {
