@@ -1,3 +1,5 @@
+//Question 6:
+//Write a C program to find the maximum and minimum of three numbers.
 #include <stdio.h>
 void main()
 {
@@ -11,6 +13,7 @@ void main()
 	printf("THE LARGEST NUMBER = %d\n", max);
 	printf("THE SMALLEST NUMBER = %d", min);
 }
+//alternatively the program could be done without ternary operators
 
 
 
