@@ -71,17 +71,38 @@ void main()
                         s[i][j]=a[i][j]-b[i][j];
                       }
                  }
-                printf("A[][] + B[][]=");
+                printf("A[][] - B[][]=");
                 for(i=0;i<3;i++)
                   {
                       for(j=0;j<3;j++)
                         {
-                          printf ("%d\t",s[i][j]);
+                          printf ("%d\t",d[i][j]);
                         }
                        printf("\n");
                   }  
                   break;
      case3:
             
-   
-   
+            for(i=0;i<3;i++)
+            {
+               for(j=0;j<3;j++)
+               {
+                  for(k=0;k<3;k++)
+                    m[i][j]+=a[i][k]+b[k][j];
+               }
+            }
+      
+                printf("A[][] x B[][]=");
+                for(i=0;i<3;i++)
+                  {
+                      for(j=0;j<3;j++)
+                        {
+                          printf ("%d\t",m[i][j]);
+                        }
+                       printf("\n");
+                  }  
+                  break;
+      default:
+            prinft("WORNG INPUT");
+   }
+ }
