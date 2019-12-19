@@ -1,5 +1,6 @@
 #include <stdio.h>
 //interpolation
+//will only work for 4 data
 void main()
 {
 	//no of data entries
