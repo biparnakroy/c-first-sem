@@ -1,6 +1,20 @@
 #include <stdio.h>
 //interpolation
-// only work for 4 reading tables
+int  calcP(int a, int i)
+{
+	float temp = a; 
+	for (int i = 1; i < a; i++) 
+		temp = temp * (a - i); 
+	return temp; 
+}
+int fact(int n)
+{ 
+	int f = 1; 
+	for (int i = 2; i <= n; i++) 
+		f *= i; 
+	return f; 
+	
+}
 void main()
 {
 	//no of data entries
@@ -20,27 +34,28 @@ void main()
 	 double x;
 	scanf("%lf", &x);
 	//newton forward
-		double dy[n-1];
-		double ddy[n-2];
-		double dddy[n-3];
+		double t[n-1][n];
+		int temp=0;
 		// table
-		for(int i=0;i<n-1;i++)
-		{	
-			dy[i]=_y[i+1]-_y[i];
-		}
-		for(int i=0;i<n-2;i++)
+		while(temp>n-1)
 		{
-			ddy[i]=dy[i+1]-dy[i];
-		}
-		for(int i=0;i<n-2;i++)
-		{
-			dddy[i]=ddy[i+1]-ddy[i];
+			for(int i=0;i<n-temp;i++)
+			{	
+				t[temp][i]=_y[i+1]-_y[i];
+			}
+			temp++;
 		}
 		//value compute
 		double p;
 		p=(x - _x[0])/(_x[1]-_x[0]);
 		double y;
-		y= _y[0] + (p* dy[0]) + ( ((p*(p-1))/2)*ddy[0] )+ ( ((p*(p-1)*(p-2))/6)*dddy[0] );
+		y= _y[0];
+		temp=0;
+		 while(temp>n-1)
+		 {
+			y+=(calcP(p,temp+1) /fact (temp+1))*t[temp][0];
+			temp++;
+		 }
 		// print
 		printf("y=%lf", y);
 }
