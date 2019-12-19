@@ -33,7 +33,7 @@ void main()
 		}
 		for(int i=0;i<n-2;i++)
 		{
-			dddy[i]=ddy[i+1]-ddy[i
+			dddy[i]=ddy[i+1]-ddy[i];
 		}
 		//value compute
 		double p;
