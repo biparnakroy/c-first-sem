@@ -1,4 +1,3 @@
-// CPP Program to interpolate using 
 // newton forward interpolation 
 #include<stdio.h>
 
@@ -51,7 +50,7 @@ void main()
 	} 
 
 	// Value to interpolate at 
-	float value = 52; 
+	float value = 5; 
 
 	// initializing u and sum 
 	float sum = y[0][0]; 
