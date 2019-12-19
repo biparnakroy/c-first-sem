@@ -1,3 +1,4 @@
+#include <stdio.h>
 //interpolation
 void main()
 {
