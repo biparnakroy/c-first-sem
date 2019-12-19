@@ -1,5 +1,6 @@
 #include <stdio.h>
 //interpolation
+// only work for 4 reading tables
 void main()
 {
 	//no of data entries
