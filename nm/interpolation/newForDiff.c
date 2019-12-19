@@ -1,61 +1,64 @@
-#include <stdio.h>
-//interpolation
-int  calcP(int a, int i)
-{
-	float temp = a; 
-	for (int i = 1; i < a; i++) 
-		temp = temp * (a - i); 
+// CPP Program to interpolate using 
+// newton forward interpolation 
+#include<stdio.h>
+
+// calculating u mentioned in the formula 
+float u_cal(float u, int n) 
+{ 
+	float temp = u; 
+	for (int i = 1; i < n; i++) 
+		temp = temp * (u - i); 
 	return temp; 
-}
-int fact(int n)
+
+} 
+
+// calculating factorial of given number n 
+int fact(int n) 
 { 
 	int f = 1; 
 	for (int i = 2; i <= n; i++) 
 		f *= i; 
 	return f; 
+} 
+
+void main() 
+{ 
+	// Number of values given 
+	int n = 4; 
+	float x[] = { 4.0, 6.0, 8.0, 10.0}; 
 	
-}
-void main()
-{
-	//no of data entries
-	int n;
-	scanf("%d",&n);
-	//input of data
-	double  _x[n],_y[n];
-	for(int i=0;i<n;i++)
-	{
-		printf("x%d:", (i+1));
-		scanf("%lf",&_x[i]);
-	
-		printf("y%d:", (i+1));
-		scanf("%lf",&_y[i]);
-	}
-	//value to interpolate
-	 double x;
-	scanf("%lf", &x);
-	//newton forward
-		double t[n-1][n];
-		int temp=0;
-		// table
-		while(temp>n-1)
-		{
-			for(int i=0;i<n-temp;i++)
-			{	
-				t[temp][i]=_y[i+1]-_y[i];
-			}
-			temp++;
-		}
-		//value compute
-		double p;
-		p=(x - _x[0])/(_x[1]-_x[0]);
-		double y;
-		y= _y[0];
-		temp=0;
-		 while(temp>n-1)
-		 {
-			y+=(calcP(p,temp+1) /fact (temp+1))*t[temp][0];
-			temp++;
-		 }
-		// print
-		printf("y=%lf", y);
+	// y[][] is used for difference table 
+	// with y[][0] used for input 
+	float y[n][n]; 
+	y[0][0] = 1.0;
+	y[1][0] = 3.0; 
+	y[2][0] = 8.0; 
+	y[3][0] = 16.0; 
+
+	// Calculating the forward difference 
+	// table 
+	for (int i = 1; i < n; i++) { 
+		for (int j = 0; j < n - i; j++) 
+			y[j][i] = y[j + 1][i - 1] - y[j][i - 1]; 
+	} 
+
+	// Displaying the forward difference table 
+	for (int i = 0; i < n; i++) { 
+		printf("%f\t", x[i] );
+		for (int j = 0; j < n - i; j++) 
+			printf("%f\t",y[i][j]);
+		printf("\n");
+	} 
+
+	// Value to interpolate at 
+	float value = 52; 
+
+	// initializing u and sum 
+	float sum = y[0][0]; 
+	float u = (value - x[0]) / (x[1] - x[0]); 
+	for (int i = 1; i < n; i++) { 
+		sum = sum + (u_cal(u, i) * y[0][i]) / fact(i); 
+	} 
+
+	printf("\n%f",sum);
 }
