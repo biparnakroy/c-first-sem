@@ -44,7 +44,7 @@ void bisection(float a, float b)
 //regular falsi methode yielding roots with efficiency of EPLSILON
 void regFa(float a, float b)
 {
-	if(func(a)*func(b) <0)
+	if(func(a)*func(b) >=0)
 		printf("You have not entered the right values of a and b\n");
 	//checking if a & b have right values 
     float	c = a; //initailize the result
